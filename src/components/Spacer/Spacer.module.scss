@@ -1,0 +1,15 @@
+@import '../../colors.scss';
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 40px;
+  font-size: 1.5rem;
+  color: $red;
+}
+.smallContainer {
+  margin-top: 1.5rem;
+  color: $blue;
+}

@@ -1,0 +1,30 @@
+.formContainer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'dateS  dateE'
+    'hourS  hourE'
+    'placeS  placeE';
+  div {
+    margin-bottom: 2rem;
+  }
+}
+
+.rentDay {
+  grid-area: dateS;
+}
+.endRentDay {
+  grid-area: dateE;
+}
+.rentHour {
+  grid-area: hourS;
+}
+.endRentHour {
+  grid-area: hourE;
+}
+.rentPlace {
+  grid-area: placeS;
+}
+.endRentPlace {
+  grid-area: placeE;
+}

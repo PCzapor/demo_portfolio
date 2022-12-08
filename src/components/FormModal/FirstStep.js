@@ -1,0 +1,117 @@
+import React, { useEffect } from 'react';
+import RentLocations from './RentLocations';
+import styles from './FirstStep.module.scss';
+
+const validate = ({
+  rentFrom,
+  rentUntil,
+  startHour,
+  endHour,
+  returnPlace,
+  pickupPlace
+}) => {
+  let isOkay = false;
+  if (
+    rentFrom &&
+    rentUntil &&
+    startHour &&
+    endHour &&
+    returnPlace &&
+    pickupPlace
+  ) {
+    if (new Date(rentFrom) < new Date(rentUntil)) {
+      isOkay = true;
+    }
+  }
+
+  return isOkay;
+};
+
+const FirstStep = ({
+  orderDetails,
+  onChangeHandler,
+  setIsNextButtonDisabled
+}) => {
+  useEffect(() => {
+    if (validate(orderDetails)) {
+      return setIsNextButtonDisabled(false);
+    }
+  }, [orderDetails, setIsNextButtonDisabled]);
+  return (
+    <div className={styles.formContainer}>
+      <div className={styles.rentDay}>
+        <p>Wypożycz od:</p>
+        <input
+          type="date"
+          id="rentFrom"
+          name="rentFrom"
+          required={true}
+          aria-required="true"
+          defaultValue={orderDetails.rentFrom}
+          onChange={onChangeHandler}
+        />
+      </div>
+      <div className={styles.endRentDay}>
+        <p>Data zwrotu pojazdu:</p>
+        <input
+          type="date"
+          id="rentUntil"
+          name="rentUntil"
+          min={orderDetails['rentFrom']}
+          required={true}
+          aria-required="true"
+          defaultValue={orderDetails.rentUntil}
+          onChange={onChangeHandler}
+        />
+      </div>
+      <div className={styles.rentHour}>
+        <label>
+          Godzina najmu:
+          <input
+            type="time"
+            name="startHour"
+            required={true}
+            defaultValue={orderDetails.startHour}
+            onChange={onChangeHandler}
+          />
+        </label>
+      </div>
+      <div className={styles.endRentHour}>
+        <label>
+          Godzina zwrotu:
+          <input
+            type="time"
+            name="endHour"
+            required={true}
+            defaultValue={orderDetails.endHour}
+            onChange={onChangeHandler}
+          />
+        </label>
+      </div>
+      <div className={styles.rentPlace}>
+        <span>Miejsce najmu:</span>
+        <RentLocations
+          value={orderDetails.pickupPlace ?? ''}
+          name="pickupPlace"
+          onChange={onChangeHandler}
+        />
+      </div>
+      <div className={styles.endRentPlace}>
+        <span>Miejsce zwrotu:</span>
+        <RentLocations
+          value={orderDetails.returnPlace ?? ''}
+          name="returnPlace"
+          onChange={onChangeHandler}
+        />
+      </div>
+      <div>
+        <span title="Pakiet ubezpieczenia dostępny od 5 dni najmu">
+          <label>Pakiet dodatkowego ubezpieczenia(10 PLN / doba)</label>
+          <input name="Insurance" type="checkbox"></input>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default FirstStep;

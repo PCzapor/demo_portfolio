@@ -1,0 +1,25 @@
+@import '../../colors.scss';
+.formModal {
+  position: fixed;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid $grey;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 40rem;
+  z-index: 20;
+  top: 15vh;
+  left: 30vw;
+}
+.footer {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2rem;
+  button {
+    &:disabled {
+      background-color: grey;
+    }
+  }
+}

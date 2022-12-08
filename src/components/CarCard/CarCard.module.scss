@@ -1,0 +1,150 @@
+@import '../../colors.scss';
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  border: 1px solid $grey;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover {
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.image {
+  max-height: 100%;
+  position: relative;
+  img {
+    height: 100%;
+    vertical-align: middle;
+  }
+  .priceTag {
+    @include flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $red;
+    height: 35px;
+    width: 60px;
+    color: white;
+  }
+  .priceTagStyle {
+    position: absolute;
+    top: 0;
+    right: 60px;
+    width: 0;
+    height: 0;
+    border-bottom: 35px solid $red;
+    border-left: 15px solid transparent;
+  }
+  .carFeatures {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+}
+.details {
+  margin-left: 1.5rem;
+  color: $grey;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  span:not(:first-of-type) {
+    padding-top: 0.8rem;
+  }
+  span {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    color: $red;
+    font-size: 1.5rem;
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.prices {
+  @include flex;
+  width: 40%;
+
+  flex-direction: column;
+
+  margin-right: 1rem;
+  h4 {
+    color: $grey;
+
+    margin-top: 0;
+    margin-bottom: 0rem;
+  }
+  .spanHelp {
+    color: $red;
+    font-size: 1.3rem;
+  }
+
+  .info {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: end;
+    span {
+      font-size: 1rem;
+    }
+  }
+  .linkplacement {
+    margin-top: 1rem;
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: end;
+
+    button {
+      @include flex;
+      text-decoration: none;
+      width: 150px;
+      min-height: 40px;
+
+      border: none;
+      color: white;
+      background-color: $red;
+
+      &:hover {
+        background-color: $blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.specificPrices {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  font-size: 1.3rem;
+  li:not(:first-of-type) {
+    margin-left: 2rem;
+  }
+  li {
+    @include flex;
+    flex-direction: column;
+
+    color: $grey;
+    font-size: 0.8rem;
+  }
+  span {
+    font-size: 1.3rem;
+    color: $blue;
+    display: flex;
+
+    p {
+      font-size: 0.8rem;
+      line-height: 0;
+      margin-left: 0.3rem;
+      color: $red;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+$blue: #046cb6;
+$red: #fa6400;
+$grey: grey;
+$green: rgb(8, 112, 8);
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
