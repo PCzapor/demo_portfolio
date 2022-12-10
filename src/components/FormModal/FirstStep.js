@@ -38,35 +38,35 @@ const FirstStep = ({
     }
   }, [orderDetails, setIsNextButtonDisabled]);
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.rentDay}>
-        <p>Wypożycz od:</p>
-        <input
-          type="date"
-          id="rentFrom"
-          name="rentFrom"
-          required={true}
-          aria-required="true"
-          defaultValue={orderDetails.rentFrom}
-          onChange={onChangeHandler}
-        />
-      </div>
-      <div className={styles.endRentDay}>
-        <p>Data zwrotu pojazdu:</p>
-        <input
-          type="date"
-          id="rentUntil"
-          name="rentUntil"
-          min={orderDetails['rentFrom']}
-          required={true}
-          aria-required="true"
-          defaultValue={orderDetails.rentUntil}
-          onChange={onChangeHandler}
-        />
-      </div>
-      <div className={styles.rentHour}>
-        <label>
-          Godzina najmu:
+    <>
+      <div className={styles.formContainer}>
+        <div className={styles.rentDay}>
+          <label>Wypożycz od:</label>
+          <input
+            type="date"
+            id="rentFrom"
+            name="rentFrom"
+            required={true}
+            aria-required="true"
+            defaultValue={orderDetails.rentFrom}
+            onChange={onChangeHandler}
+          />
+        </div>
+        <div className={styles.endRentDay}>
+          <label>Data zwrotu pojazdu:</label>
+          <input
+            type="date"
+            id="rentUntil"
+            name="rentUntil"
+            min={orderDetails['rentFrom']}
+            required={true}
+            aria-required="true"
+            defaultValue={orderDetails.rentUntil}
+            onChange={onChangeHandler}
+          />
+        </div>
+        <div className={styles.rentHour}>
+          <label>Godzina najmu:</label>
           <input
             type="time"
             name="startHour"
@@ -74,11 +74,9 @@ const FirstStep = ({
             defaultValue={orderDetails.startHour}
             onChange={onChangeHandler}
           />
-        </label>
-      </div>
-      <div className={styles.endRentHour}>
-        <label>
-          Godzina zwrotu:
+        </div>
+        <div className={styles.endRentHour}>
+          <label>Godzina zwrotu:</label>
           <input
             type="time"
             name="endHour"
@@ -86,31 +84,33 @@ const FirstStep = ({
             defaultValue={orderDetails.endHour}
             onChange={onChangeHandler}
           />
-        </label>
+        </div>
+        <div className={styles.rentPlace}>
+          <span>Miejsce najmu:</span>
+          <RentLocations
+            value={orderDetails.pickupPlace ?? ''}
+            name="pickupPlace"
+            onChange={onChangeHandler}
+          />
+        </div>
+        <div className={styles.endRentPlace}>
+          <span>Miejsce zwrotu:</span>
+          <RentLocations
+            value={orderDetails.returnPlace ?? ''}
+            name="returnPlace"
+            onChange={onChangeHandler}
+          />
+        </div>
       </div>
-      <div className={styles.rentPlace}>
-        <span>Miejsce najmu:</span>
-        <RentLocations
-          value={orderDetails.pickupPlace ?? ''}
-          name="pickupPlace"
-          onChange={onChangeHandler}
-        />
+      <div className={styles.bonusOption}>
+        <label>Pakiet dodatkowego ubezpieczenia(10 PLN / doba)</label>
+        <input
+          name="Insurance"
+          type="checkbox"
+          title="Pakiet ubezpieczenia dostępny od 5 dni najmu"
+        ></input>
       </div>
-      <div className={styles.endRentPlace}>
-        <span>Miejsce zwrotu:</span>
-        <RentLocations
-          value={orderDetails.returnPlace ?? ''}
-          name="returnPlace"
-          onChange={onChangeHandler}
-        />
-      </div>
-      <div>
-        <span title="Pakiet ubezpieczenia dostępny od 5 dni najmu">
-          <label>Pakiet dodatkowego ubezpieczenia(10 PLN / doba)</label>
-          <input name="Insurance" type="checkbox"></input>
-        </span>
-      </div>
-    </div>
+    </>
   );
 };
 

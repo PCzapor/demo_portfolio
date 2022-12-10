@@ -1,0 +1,11 @@
+.contaier {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  display: flex;
+  min-width: 80%;
+  min-height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}

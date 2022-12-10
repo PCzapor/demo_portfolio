@@ -1,13 +1,19 @@
 @import '../../colors.scss';
+#root {
+  width: 100%;
+}
 .baner {
-  width: 80%;
+  width: 100%;
   padding-top: 40px;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  @media (min-width: 768) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
 }
 .fadeIn {
   animation: fadeIn 3s ease-out;
+  width: 100%;
 }
 .baner1 {
   z-index: 2;
@@ -42,23 +48,32 @@
 }
 .banerPromo2 {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  top: 23%;
-  right: 250px;
+  width: 140px;
+  height: 140px;
+  top: 10%;
+  right: 10px;
   z-index: 5;
   border-radius: 50%;
   background-color: #046cb6a1;
   display: flex;
+  @media (min-width: 768) {
+    width: 300px;
+    height: 300px;
+    top: 23%;
+    right: 250px;
+  }
 }
 .banerPromoText2 {
   display: flex;
   width: 100%;
   color: $red;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
   opacity: 1;
   text-align: center;
+  @media (min-width: 768) {
+    font-size: 1.5rem;
+  }
 }
 
 @keyframes fadeIn {

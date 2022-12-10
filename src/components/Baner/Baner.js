@@ -7,12 +7,12 @@ import { useState } from 'react';
 const Baner = () => {
   const [baner1IsOpen, setBaner1IsOpen] = useState(false);
 
-  useEffect(() => {
-    const timeout = setInterval(() => {
-      setBaner1IsOpen(!baner1IsOpen);
-    }, 5500);
-    return () => clearInterval(timeout);
-  }, [baner1IsOpen]);
+  // useEffect(() => {
+  //   const timeout = setInterval(() => {
+  //     setBaner1IsOpen(!baner1IsOpen);
+  //   }, 5500);
+  //   return () => clearInterval(timeout);
+  // }, [baner1IsOpen]);
 
   return (
     <div className={styles.baner}>

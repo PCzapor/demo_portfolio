@@ -1,12 +1,41 @@
 import React from 'react';
+import { useEffect } from 'react';
+import styles from './SecondStep.module.scss';
 
-const SecondStep = ({ orderDetails, car, onChangeHandler }) => {
+const validate = ({ userName, userEmail, userNumber }) => {
+  let isOkay = false;
+  // console.log('isokayFAlse', isOkay);
+
+  if (userName && userEmail && userNumber) isOkay = true;
+
+  console.log('isokay', isOkay);
+  console.log('iusername', userName);
+  console.log('iuserem', userEmail);
+  console.log('iusernum', userNumber);
+  return isOkay;
+};
+
+const SecondStep = ({
+  orderDetails,
+  car,
+  onChangeHandler,
+  setIsNextButtonDisabled
+}) => {
   const rentTime =
     (new Date(orderDetails.rentUntil) - new Date(orderDetails.rentFrom)) /
     1000 /
     3600 /
     24;
+  // console.log('1', { isNextButtonDisabled });
+  useEffect(() => {
+    if (validate(orderDetails)) {
+      return setIsNextButtonDisabled(false);
+    } else {
+      return setIsNextButtonDisabled(true);
+    }
+  }, [orderDetails, setIsNextButtonDisabled]);
 
+  // console.log(isNextButtonDisabled);
   const pricePerDay = () => {
     let finalChange = car.priceChange;
     if (rentTime < 3) {
@@ -22,26 +51,34 @@ const SecondStep = ({ orderDetails, car, onChangeHandler }) => {
   };
   return (
     <div>
-      <div className="summary">
-        <div>
-          Chcesz wypożyczyć: {car.title} na okres {rentTime} dni od{' '}
-          {orderDetails.rentFrom}, {orderDetails.startHour} -
-          {orderDetails.pickupPlace} do {orderDetails.rentUntil},{' '}
-          {orderDetails.endHour} - {orderDetails.returnPlace} Cena:{' '}
-          {pricePerDay() * rentTime} PLN
+      <div>
+        <div className={styles.summary}>
+          Chcesz wypożyczyć: <strong>{car.title}</strong> na okres{' '}
+          <strong>{rentTime} dni</strong> <br />
+          od <strong>{orderDetails.rentFrom}</strong>,
+          <strong> {orderDetails.startHour}</strong> do
+          <strong>
+            {' '}
+            {orderDetails.rentUntil}, {orderDetails.endHour}
+          </strong>{' '}
+          <br />
+          Odbiór z {orderDetails.pickupPlace} a oddać na{' '}
+          {orderDetails.returnPlace} <br />
+          Cena: <strong>{pricePerDay() * rentTime}</strong> PLN
         </div>
-        <span></span>
-        <span>
-          Administratorem Państwa danych osobowych jest Ekarent S.C. z siedzibą
-          w 81-415 Gdynia, ul. Batalionów Chłopskich 25. Informujemy o
-          możliwości wycofania w dowolnym momencie udzielonej zgody. Jeżeli
-          akceptujesz powyższe warunki uzupełnij dane osobowe
-        </span>
+        <div className={styles.personalInfo}>
+          <span>
+            Administratorem Państwa danych osobowych jest Firma XYZ. z siedzibą
+            w ________, ul. _____________. Informujemy o możliwości wycofania w
+            dowolnym momencie udzielonej zgody. Jeżeli akceptujesz powyższe
+            warunki uzupełnij dane osobowe
+          </span>
+        </div>
       </div>
       <input type="text" name="company_name" placeholder="Nazwa firmy" />
       <input
         type="text"
-        name="user_name"
+        name="userName"
         placeholder="Twoje imię i nazwisko*"
         required={true}
         aria-required="true"
@@ -50,34 +87,34 @@ const SecondStep = ({ orderDetails, car, onChangeHandler }) => {
       <input
         type="text"
         name="user_adress"
-        placeholder="Adres*"
+        placeholder="Adres"
         required={true}
         aria-required="true"
       ></input>
       <input
         type="text"
         name="user_city"
-        placeholder="Miasto*"
+        placeholder="Miasto"
         required={true}
         aria-required="true"
       ></input>
       <input
         type="text"
         name="user_post_code"
-        placeholder="Kod pocztowy*"
+        placeholder="Kod pocztowy"
         required={true}
         aria-required="true"
       ></input>
       <input
         type="text"
         name="user_country"
-        placeholder="Kraj*"
+        placeholder="Kraj"
         required={true}
         aria-required="true"
       ></input>
       <input
         type="text"
-        name="user_email"
+        name="userEmail"
         placeholder="e-mail*"
         required={true}
         aria-required="true"
@@ -85,10 +122,11 @@ const SecondStep = ({ orderDetails, car, onChangeHandler }) => {
       ></input>
       <input
         type="text"
-        name="user_phone_number"
+        name="userNumber"
         placeholder="Twój numer telefonu*"
         required={true}
         aria-required="true"
+        onChange={onChangeHandler}
       ></input>
     </div>
   );

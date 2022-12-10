@@ -30,10 +30,18 @@ const PageDisplay = ({ page, selectedCar, setIsNextButtonDisabled }) => {
           orderDetails={orderDetails}
           car={selectedCar}
           onChangeHandler={onChangeHandler}
+          setIsNextButtonDisabled={setIsNextButtonDisabled}
         />
       );
     case 2:
-      return <ThirdStep car={selectedCar} />;
+      return (
+        <ThirdStep
+          onChangeHandler={onChangeHandler}
+          orderDetails={orderDetails}
+          car={selectedCar}
+          setIsNextButtonDisabled={setIsNextButtonDisabled}
+        />
+      );
     default:
       return <ConfirmationScreen orderDetails={orderDetails} />;
   }
@@ -50,6 +58,7 @@ const NextButton = ({ page, isNextButtonDisabled, nextHandler }) => {
       break;
     default:
       text = 'Dalej';
+      console.log(isNextButtonDisabled);
       break;
   }
   return (

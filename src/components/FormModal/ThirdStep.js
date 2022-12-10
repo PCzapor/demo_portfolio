@@ -1,12 +1,11 @@
 import React from 'react';
+import styles from './ThirdStep.module.scss';
 
 const ThirdStep = () => {
   return (
-    <div>
-      <span>
-        W razie pytań prosimy je umieścic tutaj:
-        <textarea title="questions" />
-      </span>
+    <div className={styles.container}>
+      <span>W razie uwag do rezerwacji prosimy je umieścic tutaj:</span>
+      <textarea title="questions" />
     </div>
   );
 };

@@ -121,12 +121,12 @@ const CarCard = props => {
       </div>
 
       <div className={styles.prices}>
-        <h4>ceny za dzien</h4>
+        <h4>Ceny</h4>
         <Prices minPrice={minPrice} priceChange={priceChange} />
         <div className={styles.info}>
           <span>Dłuższe terminy - indywidualnie</span>
         </div>
-        <div className={styles.linkplacement}>
+        <div className={styles.buttonplacement}>
           <button onClick={rezerwujHandler}>Rezerwuj</button>
           {backdropIsOpen ? (
             <>

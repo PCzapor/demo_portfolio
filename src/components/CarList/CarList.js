@@ -162,16 +162,13 @@ const CarList = () => {
   );
 
   const filterChangeHandler = event => {
-    // funkcja obslugujaca filterCHange, zmienia sie gdy ktora wartosc z nawiasu [] ulegnie zmienie.
     if (event.target.checked) {
-      //onChange wskazuje gdzie even ma patrzec
       return setOptionsSelected(prev => {
-        //prev to poprzedni state domysle jest jako pierwszy w funkcji
-        return [...prev, event.target.value]; // spread operator  na poprzedni state, i co zostalo klikniete
+        return [...prev, event.target.value];
       });
     } else {
       return setOptionsSelected(prev => {
-        return prev.filter(el => el !== event.target.value); // jak nie jest checked to z preva filtrujemy elementy rozne od checked
+        return prev.filter(el => el !== event.target.value);
       });
     }
   };
@@ -183,29 +180,25 @@ const CarList = () => {
       startIndex = limitPerPage * activePage - limitPerPage;
     }
     if (!optionsSelected.length) {
-      // jjak puste
       return setCarList(prev => {
-        //odpala funkcje w srodku tworzy zmienna, tworzy enda
         setPagesCount(Math.ceil(CAR_LIST.length / limitPerPage));
-        return CAR_LIST.slice(startIndex, end); // slice mowisz startowy index i koncowy
+        return CAR_LIST.slice(startIndex, end);
       });
     } else {
       setCarList(prev => {
         const carListCopy = CAR_LIST.filter(car => {
-          //car nazywa caly jeden obiek ktory wyciaga filtrem . filter idzie po kazdym elemecie i sprawdza czy jest true czy nie
           let optionsCount = 0;
           for (const opt of car.options) {
-            //wchodze do srodka obiektu i ide przez wszystkie opcje
-            if (optionsSelected.includes(opt)) optionsCount += 1; //jesli opcje zawieraja w sobie opcie to dodaj 1
+            if (optionsSelected.includes(opt)) optionsCount += 1;
           }
-          return optionsCount === optionsSelected.length; // z dodanych checkboxow do state['gasoline','usb'] sprawdza czy dlugosc tego jest rowna ilosci wybranych opji i porownoje
+          return optionsCount === optionsSelected.length;
         });
 
         setPagesCount(Math.ceil(carListCopy.length / limitPerPage));
         return carListCopy.slice(startIndex, end);
       });
     }
-  }, [optionsSelected, activePage]); //jak sie cos z tego zmieni to sie odswieza effect,,,,, filter,findindex,find,map OPERACJE NA ARRAYACH
+  }, [optionsSelected, activePage]);
   return (
     <>
       <div className={styles.optionsContainer}>

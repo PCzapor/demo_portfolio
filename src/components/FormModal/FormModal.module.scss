@@ -10,6 +10,7 @@
   z-index: 20;
   top: 15vh;
   left: 30vw;
+  font-size: 1.2rem;
 }
 .footer {
   display: flex;
@@ -17,9 +18,12 @@
   flex-direction: row;
   justify-content: space-around;
   margin-top: 2rem;
-  button {
-    &:disabled {
-      background-color: grey;
-    }
-  }
+}
+.header {
+  text-align: center;
+}
+
+button:disabled {
+  background-color: grey !important;
+  transform: translateY(0);
 }

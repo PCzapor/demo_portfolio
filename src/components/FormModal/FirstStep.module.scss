@@ -1,3 +1,13 @@
+@mixin center {
+  text-align: center;
+  label {
+    display: block;
+  }
+  input {
+    margin-top: 0.5rem;
+  }
+}
+
 .formContainer {
   display: grid;
   grid-template-rows: auto;
@@ -12,19 +22,42 @@
 
 .rentDay {
   grid-area: dateS;
+  @include center;
 }
 .endRentDay {
   grid-area: dateE;
+  @include center;
 }
 .rentHour {
   grid-area: hourS;
+  @include center;
 }
 .endRentHour {
   grid-area: hourE;
+  @include center;
 }
 .rentPlace {
   grid-area: placeS;
+  text-align: center;
+  span {
+    display: block;
+  }
+  select {
+    margin-top: 0.5rem;
+  }
 }
 .endRentPlace {
   grid-area: placeE;
+  text-align: center;
+  span {
+    display: block;
+  }
+  select {
+    margin-top: 0.5rem;
+  }
+}
+.bonusOption {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
