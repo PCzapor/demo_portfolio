@@ -58,7 +58,7 @@ const NextButton = ({ page, isNextButtonDisabled, nextHandler }) => {
       break;
     default:
       text = 'Dalej';
-      console.log(isNextButtonDisabled);
+
       break;
   }
   return (

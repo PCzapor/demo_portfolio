@@ -1,6 +1,9 @@
 .contaier {
   display: flex;
   flex-direction: column;
+  span {
+    margin-left: 2rem;
+  }
 }
 textarea {
   display: flex;

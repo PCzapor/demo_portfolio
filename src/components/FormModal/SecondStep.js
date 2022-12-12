@@ -6,12 +6,14 @@ const validate = ({ userName, userEmail, userNumber }) => {
   let isOkay = false;
   // console.log('isokayFAlse', isOkay);
 
-  if (userName && userEmail && userNumber) isOkay = true;
+  if (userName && userEmail && userNumber && userNumber.length > 8)
+    isOkay = true;
 
   console.log('isokay', isOkay);
   console.log('iusername', userName);
   console.log('iuserem', userEmail);
   console.log('iusernum', userNumber);
+  console.log(typeof userNumber, typeof numberLenght);
   return isOkay;
 };
 
@@ -75,59 +77,42 @@ const SecondStep = ({
           </span>
         </div>
       </div>
-      <input type="text" name="company_name" placeholder="Nazwa firmy" />
-      <input
-        type="text"
-        name="userName"
-        placeholder="Twoje imię i nazwisko*"
-        required={true}
-        aria-required="true"
-        onChange={onChangeHandler}
-      />
-      <input
-        type="text"
-        name="user_adress"
-        placeholder="Adres"
-        required={true}
-        aria-required="true"
-      ></input>
-      <input
-        type="text"
-        name="user_city"
-        placeholder="Miasto"
-        required={true}
-        aria-required="true"
-      ></input>
-      <input
-        type="text"
-        name="user_post_code"
-        placeholder="Kod pocztowy"
-        required={true}
-        aria-required="true"
-      ></input>
-      <input
-        type="text"
-        name="user_country"
-        placeholder="Kraj"
-        required={true}
-        aria-required="true"
-      ></input>
-      <input
-        type="text"
-        name="userEmail"
-        placeholder="e-mail*"
-        required={true}
-        aria-required="true"
-        onChange={onChangeHandler}
-      ></input>
-      <input
-        type="text"
-        name="userNumber"
-        placeholder="Twój numer telefonu*"
-        required={true}
-        aria-required="true"
-        onChange={onChangeHandler}
-      ></input>
+      <div className={styles.inputContainer}>
+        <input type="text" name="company_name" placeholder="Nazwa firmy" />
+        <input
+          type="text"
+          name="userName"
+          placeholder="Twoje imię i nazwisko*"
+          required
+          aria-required="true"
+          onChange={onChangeHandler}
+        />
+        <input type="text" name="user_adress" placeholder="Adres"></input>
+        <input type="text" name="user_city" placeholder="Miasto"></input>
+        <input
+          type="text"
+          name="user_post_code"
+          placeholder="Kod pocztowy"
+        ></input>
+        <input type="text" name="user_country" placeholder="Kraj"></input>
+        <input
+          type="email"
+          name="userEmail"
+          placeholder="e-mail*"
+          required
+          aria-required="true"
+          onChange={onChangeHandler}
+        ></input>
+        <input
+          type="tel"
+          name="userNumber"
+          minlenght="9"
+          placeholder="Twój numer telefonu*"
+          required
+          aria-required="true"
+          onChange={onChangeHandler}
+        ></input>
+      </div>
     </div>
   );
 };

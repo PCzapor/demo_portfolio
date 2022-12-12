@@ -103,9 +103,11 @@ const CarCard = props => {
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-        <img src={image} alt="carpicture" />
-        <span className={styles.priceTag}>{minPrice} PLN</span>
-        <div className={styles.priceTagStyle}></div>
+        <div className={styles.priceTagPos}>
+          <img src={image} alt="carpicture" />
+          <span className={styles.priceTag}>{minPrice} PLN</span>
+          <div className={styles.priceTagStyle}></div>
+        </div>
         <div className={styles.carFeatures}>
           {options.map(function (item, index) {
             return <Icon type={item} key={index} />;
