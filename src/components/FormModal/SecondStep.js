@@ -13,7 +13,7 @@ const validate = ({ userName, userEmail, userNumber }) => {
   console.log('iusername', userName);
   console.log('iuserem', userEmail);
   console.log('iusernum', userNumber);
-  console.log(typeof userNumber, typeof numberLenght);
+
   return isOkay;
 };
 
