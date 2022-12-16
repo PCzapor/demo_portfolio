@@ -1,0 +1,115 @@
+.formContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: 'dateS  dateE' 'hourS  hourE' 'placeS  placeE';
+}
+
+.formContainer div {
+  margin-bottom: 2rem;
+}
+
+.rentDay {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: dateS;
+  text-align: center;
+}
+
+.rentDay label {
+  display: block;
+}
+
+.rentDay input {
+  margin-top: 0.5rem;
+}
+
+.endRentDay {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: dateE;
+  text-align: center;
+}
+
+.endRentDay label {
+  display: block;
+}
+
+.endRentDay input {
+  margin-top: 0.5rem;
+}
+
+.rentHour {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: hourS;
+  text-align: center;
+}
+
+.rentHour label {
+  display: block;
+}
+
+.rentHour input {
+  margin-top: 0.5rem;
+}
+
+.endRentHour {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: hourE;
+  text-align: center;
+}
+
+.endRentHour label {
+  display: block;
+}
+
+.endRentHour input {
+  margin-top: 0.5rem;
+}
+
+.rentPlace {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: placeS;
+  text-align: center;
+}
+
+.rentPlace span {
+  display: block;
+}
+
+.rentPlace select {
+  margin-top: 0.5rem;
+}
+
+.endRentPlace {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: placeE;
+  text-align: center;
+}
+
+.endRentPlace span {
+  display: block;
+}
+
+.endRentPlace select {
+  margin-top: 0.5rem;
+}
+
+.bonusOption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=FirstStep.module.css.map */

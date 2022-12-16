@@ -1,0 +1,23 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-height: 40px;
+  background-color: #046cb6;
+  text-decoration: none;
+  z-index: 123;
+  position: fixed;
+}
+
+.header img {
+  max-height: 40px;
+  justify-self: flex-start;
+}
+/*# sourceMappingURL=Header.module.css.map */

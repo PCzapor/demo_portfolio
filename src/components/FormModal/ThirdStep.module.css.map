@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;CAIvB;;AAND,AAGE,SAHO,CAGP,IAAI,CAAC;EACH,WAAW,EAAE,IAAI;CAClB;;AAEH,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,GAAG;EACd,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;CACnB",
+    "sources": [
+        "ThirdStep.module.scss"
+    ],
+    "names": [],
+    "file": "ThirdStep.module.css"
+}

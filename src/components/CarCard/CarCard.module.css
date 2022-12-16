@@ -1,0 +1,279 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid #046cb6;
+}
+
+@media (min-width: 1110px) {
+  .card {
+    width: 80%;
+    height: 200px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.card:hover {
+  -webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.image {
+  max-height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+@media (min-width: 1110px) {
+  .image {
+    text-align: left;
+  }
+}
+
+.image img {
+  height: 100%;
+  width: 360px;
+  vertical-align: middle;
+}
+
+.image .priceTag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fa6400;
+  height: 35px;
+  width: 60px;
+  color: white;
+}
+
+.image .priceTagPos {
+  position: relative;
+  width: 360px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image .priceTagStyle {
+  position: absolute;
+  top: -1px;
+  right: 59px;
+  width: 0;
+  height: 0;
+  border-bottom: 36px solid #fa6400;
+  border-left: 20px solid transparent;
+}
+
+.image .carFeatures {
+  position: relative;
+  bottom: 60px;
+  right: 100px;
+}
+
+@media (min-width: 1110px) {
+  .image .carFeatures {
+    left: 5px;
+  }
+}
+
+.details {
+  margin-left: auto;
+  margin-right: auto;
+  color: grey;
+  padding-left: 0.5rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1110px) {
+  .details {
+    width: 33%;
+  }
+}
+
+.details span:not(:first-of-type) {
+  padding-top: 0.8rem;
+}
+
+.details span {
+  font-size: 1.2rem;
+}
+
+.details h3 {
+  color: #fa6400;
+  font-size: 1.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+}
+
+.prices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 1110px) {
+  .prices {
+    width: 30%;
+    margin-right: 0.5rem;
+  }
+}
+
+.prices h4 {
+  color: #046cb6;
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+.prices .spanHelp {
+  color: #fa6400;
+  font-size: 1.3rem;
+}
+
+.prices .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1110px) {
+  .prices .info {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+}
+
+.prices .info span {
+  font-size: 1rem;
+}
+
+.prices .specificPrices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+@media (min-width: 1110px) {
+  .prices .specificPrices {
+    font-size: 1.3rem;
+  }
+}
+
+.prices .specificPrices li:not(:first-of-type) {
+  margin-left: 1rem;
+}
+
+.prices .specificPrices li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: grey;
+  font-size: 0.8rem;
+}
+
+.prices .specificPrices span {
+  font-size: 1.3rem;
+  color: #046cb6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.prices .specificPrices span p {
+  font-size: 0.8rem;
+  line-height: 0;
+  margin-left: 0.3rem;
+  color: #fa6400;
+}
+
+.prices .buttonplacement {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1110px) {
+  .prices .buttonplacement {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+}
+
+.prices .buttonplacement button:hover {
+  background-color: #046cb6;
+  cursor: pointer;
+}
+/*# sourceMappingURL=CarCard.module.css.map */
